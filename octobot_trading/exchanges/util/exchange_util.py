@@ -163,7 +163,7 @@ async def is_compatible_account(exchange_name: str, exchange_config: dict, tenta
         if not local_exchange_manager.is_spot_only:
             message = f"Future trading on {exchange_name.capitalize()} requires a supporting account. {error}." \
                       f"Please create a new {exchange_name.capitalize()} account to use futures trading. "
-            # only ensure compatibility for non spot trading
+            # only ensure compatibility for non-spot trading
             return is_compatible, True, message if error else error
         else:
             # auth didn't fail, spot trading is always allowed
